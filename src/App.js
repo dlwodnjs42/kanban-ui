@@ -1,5 +1,4 @@
-import './App.css';
-import Header from './Components/Header.js/index.js';
+import Header from './Components/Header.js';
 
 function App() {
   return (
