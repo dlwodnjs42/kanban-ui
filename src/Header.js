@@ -33,7 +33,7 @@ function Header() {
         setAnchorEl(null);
     }
 
-    const renderMenu = (
+    const renderProfile = (
         <Menu
         anchorEl={anchorEl}
         anchorOrigin={{vertical: 'top', horizontal: 'right'}}
@@ -46,6 +46,7 @@ function Header() {
             <MenuItem onClick={handleMenuClose}> Logout </MenuItem>
         </Menu>
         );
+
 
     return (
         <div className='header'>
@@ -85,7 +86,7 @@ function Header() {
                                         <AccountCircle />
                                     </IconButton>
 
-                                    {renderMenu}
+                                    {renderProfile}
                                 </Grid>
                             </Grid>
                         </Grid>
