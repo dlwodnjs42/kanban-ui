@@ -1,0 +1,36 @@
+.dashboard {
+    width:95%;
+    height:100vh;
+    margin-left:2.5%;
+    margin-top: 15px;
+
+}
+.dashboard-title {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+.dashboard-title-text {
+    display:flex;
+}
+
+.dashboard-columns {
+    margin-top:10px;
+    width:100%;
+    height:100%;
+}
+
+.dashboard-columns-paper {
+    display:flex;
+    height: 97.5%;
+    border-radius: 5px;
+}
+
+.dashboard-update-buttons {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-create-settings-button {
+    margin-right:10px;
+}

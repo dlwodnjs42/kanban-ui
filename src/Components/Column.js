@@ -1,50 +1,48 @@
 import React from 'react';
-import axios from 'axios';
-
-import api from '../api';
-
+import Post from './Post';
 import Grid from '@material-ui/core/Grid';
+import { Paper } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
+import './Column.css';
 
+function Column(props) {
 
-function Column() {
-    /* This is where I query for the post data from to column_id */
+    const columns = {}
+    const members = {}
 
+    const initialize = () => {
+        props.allMembers.map((member) => {
+            const fullname = member.first_name + " " + member.last_name
+            members[fullname] = member._id;
+        });
 
-    const [posts, setPost] = useState([
-        {
-            "title": "Todo",
-            "description": "",
-            "story_points": ""
-        },
-        {
-            "title": "In Progress",
-            "description": "",
-            "story_points": ""
-        },
-        {
-            "title": "Done",
-            "description": "",
-            "story_points": ""
-        }
-    ]);
+        props.allColumns.map((column) => {
+            columns[column.column_title] = column._id;
+        });
+    }
 
-
-
+    initialize()
 
     return (
-        <Grid container>
-            <Grid container alignItems="center">
-                <Grid item>
-                    {/* Title */}
+        <div className="column">
+            <Paper elevation={2} className="column-paper-title">
+                <Grid container className="column-paper-title-text">
+                    <Typography noWrap variant='h6'>
+                        {props.column.column_title}
+                    </Typography>
                 </Grid>
-                <Grid item>
-                    <Post >
-
-                    </Post>
-                </Grid>
-            </Grid>
-        </Grid>
+            </Paper>
+            <Paper elevation={2} className="column-paper-post">
+                {props.column.posts.map((post) => {
+                    return (
+                        <Grid item>
+                            <Post key={post._id} post={post} editOpen={props.editOpen} allMembers={members} allColumns={columns}/>
+                        </Grid>
+                    )
+                })}
+            </Paper>
+        </div>
     )
 }
 

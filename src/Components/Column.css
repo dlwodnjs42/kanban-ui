@@ -1,0 +1,19 @@
+.column {
+    height:100%;
+    /* border-right:1px solid black; */
+}
+.column-paper-title {
+    display:flex;
+    height:4%;
+    margin:5px;
+    align-items: center;
+}
+.column-paper-title-text {
+    justify-content:center
+}
+
+.column-paper-post {
+    height:94%;
+    margin:5px;
+}
+
